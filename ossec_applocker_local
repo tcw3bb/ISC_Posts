@@ -1,0 +1,72 @@
+<!—Created by Tom Webb tcw3bb [at] gmail[dot]com —>
+<rule id="100119" level=“2”>
+ <if_sid>18101</if_sid>
+ <id>^8002</id>
+ <description>AppLocker allowed a program to execute.</description>
+</rule>
+
+<rule id="100120" level=“2”>
+ <if_sid>18102</if_sid>
+ <id>^8003</id>
+ <description>AppLocker allowed a program to execute.</description>
+</rule>
+
+<rule id="100021" level="12”>
+ <if_sid>18103</if_sid>
+  <id>^8004</id>
+ <description>AppLocker blocked program.</description>
+</rule>
+
+<rule id="100122" level=“2”>
+ <if_sid>18101</if_sid>
+  <id>^8005</id>
+  <description>AppLocker allowed an MSI or script to execute.</description>
+</rule>
+
+<rule id="100123" level=“2”>
+ <if_sid>18102</if_sid>
+ <id>^8006</id>
+ <description>AppLocker allowed an MSI or script audited,but would have been blocked.</description>
+</rule>
+
+<rule id="100124" level="12”>
+ <if_sid>18103</if_sid>
+ <id>^8007</id>
+ <description>AppLocker prevented an MSI or script to execute</description>
+</rule>
+
+<rule id="100125" level=“2”>
+ <if_sid>18103</if_sid>
+ <id>^8020</id>
+ <description>Packaged app allowed.</description>
+</rule>
+
+<rule id="100126" level=“2”>
+ <if_sid>18103</if_sid>
+ <id>^8021</id>
+ <description>Packaged app audited.</description>
+</rule>
+
+<rule id="100127" level="12”>
+ <if_sid>18103</if_sid>
+ <id>^8022</id>
+ <description>Packaged app disabled</description>
+</rule>
+
+<rule id="100128" level=“2”>
+ <if_sid>18103</if_sid>
+ <id>^8023</id>
+ <description>Packaged app installation allowed.</description>
+</rule>
+
+<rule id="100129" level=“2”>
+ <if_sid>18103</if_sid>
+ <id>^8024</id>
+ <description>Packaged app installation audited.</description>
+</rule>
+
+<rule id="100130" level="12”>
+ <if_sid>18102</if_sid>
+ <id>^8025</id>
+ <description>Packaged app installation disable.</description>
+</rule>
