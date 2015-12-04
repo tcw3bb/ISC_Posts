@@ -41,7 +41,7 @@ else
 	zcat $brolog/$date/http* |fgrep -w "$url" >$WORKINGDIR/web-traffic	
 	web_visits=`cat $WORKINGDIR/web-traffic|cut -d$'\t' -f3| sort |uniq |wc -l`
 	post_web_visits=`fgrep POST $WORKINGDIR/web-traffic|wc -l`
-	malicious_ip=`cat $WORKINGDIR/web-traffic|cut -d$'\t' -f3| sort |uniq|sed ':a;N;$!ba;s/\n/, /g'`
+	malicious_ip=`cat $WORKINGDIR/email| cut -d$'\t' -f3| sort |uniq|sed ':a;N;$!ba;s/\n/, /g'`
  	mail_agent=`cat $WORKINGDIR/email|cut -d$'\t' -f23 | sort |uniq`
 	#helo_from=`cat $WORKINGDIR/email|cut -d$'\t' -f8 | sort |uniq`
 	echo
