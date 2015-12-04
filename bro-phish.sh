@@ -1,6 +1,6 @@
 #!/bin/bash
 #Created by Tom Webb tw3bb@gmail.com
-#Version 1.0
+#Version 1.1
 #This assumes you are using Security Onion with the bro logs folder having subfolders with date line YYYY-MM-DD
 
 ####CONFIG SECTION
