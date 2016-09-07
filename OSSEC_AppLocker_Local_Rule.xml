@@ -23,7 +23,7 @@
   <description>AppLocker allowed an MSI or script to execute.</description>
 </rule>
 
-<rule id="100003” level=“2”>
+<rule id="100011” level=“2”>
  <if_sid>18102</if_sid>
  <id>^8006</id>
  <description>AppLocker allowed an MSI or script audited,but would have been blocked.</description>
