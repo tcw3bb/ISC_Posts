@@ -1,3 +1,4 @@
+<group name="windows,">
 <!—Created by Tom Webb tcw3bb@gmail.com —>
 <rule id=“100000” level=“2”>
  <if_sid>18101</if_sid>
@@ -70,3 +71,4 @@
  <id>^8025</id>
  <description>Packaged app installation disable.</description>
 </rule>
+</group>
