@@ -42,4 +42,4 @@ echo "############"
 echo "Top 20 Connection Attempts for $today"
 echo "############"
 grep -o 'SRC=.*' /var/log/dshield.log  |cut -d '=' -f2|cut -d ' ' -f1 |sort |uniq -c |sort -nr |head -n 20
-~
+
