@@ -4,7 +4,7 @@
 #Tom Webb
 #@twsecblog
 today=`date +%F`
-today-post=`date +'%d %b %Y`'
+today-post=`date +'%d %b %Y`
 
 #Move SQL file
 cp /srv/www/DB/webserver.sqlite /tmp
