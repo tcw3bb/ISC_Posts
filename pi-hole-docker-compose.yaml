@@ -1,0 +1,48 @@
+#Tom Webb
+#12/2023
+version: '3.6'
+services:
+cloudflared:
+    container_name: cloudflared
+    restart: unless-stopped
+    image: cloudflare/cloudflared
+    command: proxy-dns
+    environment:
+      - "TUNNEL_DNS_UPSTREAM=https://208.67.222.123/dns-query,https://208.67.220.123/dns-query,https://1.1.1.3/dns-query,https://149.112.112.9/dns-query"
+      - "TUNNEL_METRICS=0.0.0.0:49312"
+      - "TUNNEL_DNS_ADDRESS=0.0.0.0"
+      - "TUNNEL_DNS_PORT=53"
+    sysctls:
+      - net.ipv4.ip_unprivileged_port_start=53
+    networks:
+      docker_internal:
+        ipv4_address: 10.0.0.2
+  pihole:
+    container_name: pihole
+    image: pihole/pihole:latest
+    ports:
+      - "53:53/tcp"
+      - "53:53/udp"
+      - "67:67/udp" # Only required if you are using Pi-hole as your DHCP server
+      - "80:80/tcp"
+    environment:
+      TZ: 'America/NewYork'
+      WEBPASSWORD: 'password'
+      DNS1: "10.0.0.2#53"
+      DNS2: "no"
+    volumes:
+      - '/usr/local/docker/etc-pihole:/etc/pihole'
+      - '/usr/local/docker/etc-dnsmasq.d:/etc/dnsmasq.d'
+    cap_add:
+      - NET_ADMIN # Required if you are using Pi-hole as your DHCP server, else not needed
+    restart: unless-stopped
+    networks:
+      docker_internal:
+        ipv4_address: 10.0.0.3
+    dns:
+      - 127.0.0.1:5053
+networks:
+  docker_internal:
+    ipam:
+      config:
+        - subnet: 10.0.0.0/24
