@@ -24,7 +24,7 @@ cloudflared:
     ports:
       - "53:53/tcp"
       - "53:53/udp"
-      - "67:67/udp" # Only required if you are using Pi-hole as your DHCP server
+      - "67:67/udp"
       - "80:80/tcp"
     environment:
       TZ: 'America/NewYork'
@@ -35,7 +35,7 @@ cloudflared:
       - '/usr/local/docker/etc-pihole:/etc/pihole'
       - '/usr/local/docker/etc-dnsmasq.d:/etc/dnsmasq.d'
     cap_add:
-      - NET_ADMIN # Required if you are using Pi-hole as your DHCP server, else not needed
+      - NET_ADMIN 
     restart: unless-stopped
     networks:
       docker_internal:
