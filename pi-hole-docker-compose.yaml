@@ -3,7 +3,7 @@
 #RaspberryPi Docker Config
 version: '3.6'
 services:
-cloudflared:
+  cloudflared:
     container_name: cloudflared
     restart: unless-stopped
     image: cloudflare/cloudflared
