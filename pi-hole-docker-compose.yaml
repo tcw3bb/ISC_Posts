@@ -41,7 +41,7 @@ services:
       docker_internal:
         ipv4_address: 10.0.0.3
     dns:
-      - 127.0.0.1:5053
+      - 10.0.0.2
 networks:
   docker_internal:
     ipam:
